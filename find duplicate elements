@@ -1,0 +1,48 @@
+
+
+question: Code : Find duplicate
+Send Feedback
+You have been given an integer array/list(ARR) of size N which contains numbers from 0 to (N - 2). Each number is present at least once. That is, if N = 5, the array/list constitutes values ranging from 0 to 3, and among these, there is a single integer value that is present twice. You need to find and return that duplicate number present in the array.
+Note :
+
+Duplicate number is always present in the given array/list.
+
+
+
+
+
+
+
+
+
+soluion:
+
+#include<iostream>
+using namespace std;
+int FindDuplicate(int arr[ ],int n)
+{
+	int sum1=0;
+	for(int i=0;i<n-1;i++){
+		sum1+=i;
+	}
+	int sum2=0;
+	for(int i=0;i<n;i++){
+		sum2+=arr[i];
+	}
+	return (sum2-sum1);
+	
+}
+int main()
+{
+	int n;
+	cout<<"enter the number of elements of the array:";
+	cin>>n;
+	int arr[n];
+	cout<<"enter the elements of the array:"<<endl;
+	for(int i=0;i<n;i++){
+		cin>>arr[i];
+	}
+	int b=FindDuplicate(arr,n);
+	cout<<"duplicate element is:"<<b<<endl;
+	
+}
