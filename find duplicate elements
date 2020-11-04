@@ -46,3 +46,22 @@ int main()
 	cout<<"duplicate element is:"<<b<<endl;
 	
 }
+
+
+OR
+
+USING XOR GATE:
+
+int DuplicateNumber(int arr[], int size){
+  
+     int duplicate = 0;
+    for(int i=1; i<=size-2; i++){
+        duplicate ^= i;
+    }
+    
+    for(int i=0; i<size; i++){
+        duplicate ^= arr[i];
+    }
+    return duplicate;
+}
+
